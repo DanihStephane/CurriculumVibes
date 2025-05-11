@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Développeur Web Full Stack | JavaScript, PHP | Expérience internationale | Disponible pour emploi à Maurice</title>
+    <!-- Préchargement de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Polices et styles de base */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #2563eb;
+            --primary-light: #dbeafe;
+            --secondary-color: #1e40af;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --accent: #3b82f6;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--white); /* Fond blanc */
+            color: var(--text-dark);
+            line-height: 1.5;
+            font-size: 0.95rem;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        /* Container principal - pleine largeur */
+        .cv-container {
+            width: 100%;
+            max-width: 1200px; /* Largeur maximale pour les grands écrans */
+            margin: 0 auto;
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+            /* Maintient le ratio A4 mais remplit l'écran */
+            min-height: 100vh;
+        }
+        
+        /* En-tête du CV */
+        .header {
+            background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+            padding: 30px 40px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .header-left {
+            flex: 0 0 auto;
+        }
+        
+        .header-center {
+            flex: 2;
+        }
+        
+        .header-right {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+        
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+        
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--primary-light);
+            letter-spacing: 0.5px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            margin-right: 8px;
+        }
+        
+        /* Contenu principal */
+        .content {
+            display: flex;
+        }
+        
+        /* Barre latérale */
+        .sidebar {
+            flex: 0.9;
+            background-color: var(--background-light);
+            padding: 30px;
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+        
+        .sidebar-section h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .sidebar-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+        
+        .contact-icon {
+            width: 28px;
+            height: 28px;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+        
+        /* Section principale */
+        .main {
+            flex: 2.1;
+            padding: 30px;
+            font-size: 0.92rem;
+        }
+        
+        .main-section {
+            margin-bottom: 25px;
+        }
+        
+        .main-section h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .main-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .profile-text {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 18px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .experience-item::before, .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .job-title, .degree {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+            font-size: 1.05rem;
+        }
+        
+        .company, .school {
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+        
+        .date {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            background-color: var(--primary-light);
+            padding: 2px 10px;
+            border-radius: 12px;
+        }
+        
+        /* Compétences */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .skill:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Projets */
+        .project {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: var(--background-light);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+        
+        .project p {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        /* Barre de progression pour les langues */
+        .language {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            align-items: center;
+        }
+        
+        .language-name {
+            font-weight: 500;
+        }
+        
+        .language-level {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background-color: #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+        
+        /* Listes */
+        ul {
+            list-style-type: none;
+            margin: 6px 0;
+        }
+        
+        li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Réalisations */
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-icon {
+            color: var(--success);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .sidebar, .main {
+                width: 100%;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-right {
+                margin-top: 15px;
+                text-align: center;
+            }
+            
+            .header-center {
+                margin-top: 15px;
+                text-align: center;
+            }
+        }
+
+        .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.status-badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    color: var(--white);
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="cv-container" id="cv-content">
+        <!-- En-tête du CV -->
+        <div class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQEkv6WVTPg-BA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1682191268664?e=1752710400&v=beta&t=J0tnthpDbAk0A9imdewQaK_iruUFfGa2sDENDJ02npU" alt="Photo professionnelle" class="profile-photo">
+                </div>
+                <div class="header-center">
+                    <h1 style="white-space: nowrap;">Danih Stephane Rakotoarison Harilanto</h1>
+                    <h2>Développeur Web Full Stack | JavaScript/TypeScript, PHP</h2>
+                    <div>
+                        <span class="tag">React/NextJS</span>
+                        <span class="tag">Laravel/Symfony</span>
+                        <span class="tag">Madagascar</span>
+                        <span class="tag">Disponible à Maurice</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="status-badge">Disponible immédiatement</div>
+                    <div class="status-badge">3+ ans d'expérience</div>
+                    <div class="status-badge">Disponible à Maurice</div>
+                </div>                          
+            </div>
+        </div>
+        
+        <!-- Contenu principal -->
+        <div class="content">
+            <!-- Barre latérale -->
+            <div class="sidebar">
+                <!-- Contact -->
+                <div class="sidebar-section">
+                    <h3>Contact</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <span>+261 34 45 671 54</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <span>danih.rakotoarison@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                        <span>danihstephane.github</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <span>linkedin.com/in/danihstephane</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <span>Antananarivo, Madagascar – Mobile pour emploi à l'île Maurice</span>
+                    </div>                    
+                </div>
+                
+                <!-- Compétences techniques -->
+                <div class="sidebar-section">
+                    <h3>Compétences techniques</h3>
+                    <div class="skills-container">
+                        <span class="skill">HTML5</span>
+                                                <span class="skill">CSS3/SASS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">TypeScript</span>
+                        <span class="skill">React.js</span>
+                        <span class="skill">Vue.js</span>
+                        <span class="skill">Node.js</span>
+                        <span class="skill">Express</span>
+                        <span class="skill">PHP</span>
+                        <span class="skill">Laravel</span>
+                        <span class="skill">Symfony</span>
+                        <span class="skill">MySQL</span>
+                        <span class="skill">PostgreSQL</span>
+                        <span class="skill">MongoDB</span>
+                        <span class="skill">Git</span>
+                        <span class="skill">Docker</span>
+                        <span class="skill">AWS</span>
+                        <span class="skill">Jenkins</span>
+                        <span class="skill">RESTful API</span>
+                        <span class="skill">UI/UX</span>
+                    </div>
+                </div>
+                
+                <!-- Langues -->
+                <div class="sidebar-section">
+                    <h3>Langues</h3>
+                    <div class="language">
+                        <span class="language-name">Français</span>
+                        <span class="language-level">Natif</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    
+                    <div class="language">
+                        <span class="language-name">Anglais</span>
+                        <span class="language-level">Courant (professionnel)</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 90%"></div>
+                    </div>
+                    
+                    <div class="language">
+                        <span class="language-name">Allemand</span>
+                        <span class="language-level">Débutant</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 70%">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projets significatifs -->
+<div class="main-section">
+    <h3>Projets significatifs</h3>
+    
+    <div class="project">
+        <div class="project-title">Transformation digitale | Ny Rainbow Group</div>
+        <p>Architecture omnicanale pour leader textile (plus d'une vingtaine de points de vente) avec React, Capacitor et Electron. <strong>Résultats clés:</strong> -78% délais logistiques, 1.2M Ar économies annuelles, +35% productivité, intégration ERP/CRM avec 99.8% fiabilité en temps réel.</p>
+    </div>
+    
+    <div class="project">
+        <div class="project-title">PrefixManager | Solution SaaS IA innovante</div>
+        <p>Plateforme de gestion de prompts multi-LLMs (OpenAI, Anthropic, Gemini) avec analytics avancés. <strong>Impact business:</strong> +42% productivité utilisateurs, -65% coûts API IA, adoption par 4 pôles d'un leader malgache. Reconnue par COLTIP Canada 2024 pour son innovation.</p>
+    </div>
+</div>
+
+                
+                <!-- Réalisations techniques -->
+                <!-- Réalisations techniques -->
+<div class="sidebar-section">
+    <h3>Réalisations techniques</h3>
+    <ul>
+        <li>Développement d'une API REST avec Node.js et Express optimisée pour les microservices, améliorant les performances globales de 40% et réduisant les temps de réponse</li>
+        <li>Création d'une bibliothèque de composants React réutilisables pour uniformiser l'interface sur 5+ projets d'entreprise, accélérant le développement de 30%</li>
+        <li>Optimisation d'une architecture MongoDB avec indexation avancée et agrégations, réduisant les temps de requête de 60% sur une base de 10M+ documents</li>
+        <li>Mise en place d'un pipeline CI/CD avec GitHub Actions et Docker, automatisant les tests et déploiements avec une fiabilité de 99,8%</li>
+    </ul>
+</div>
+
+                
+                <!-- À propos de moi -->
+                <div class="sidebar-section">
+                    <h3>À propos de moi</h3>
+                    <ul>
+                        <li>Passionné de développement web depuis mes débuts</li>
+                        <li>Autodidacte, constamment en veille technologique</li>
+                        <li>Plongée sous-marine et photographie comme loisirs</li>
+                        <li>Organisateur de meetups tech locaux</li>
+                        <li>Intérêt pour les nouvelles technologies et l'IA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Section principale -->
+            <!-- Section principale -->
+<div class="main">
+    <!-- Profil -->
+    <div class="main-section">
+        <h3>Profil professionnel</h3>
+        <div class="profile-text">
+            <p>Développeur Full Stack passionné avec 3+ ans d'expertise en <strong>JavaScript</strong> (<strong>React</strong>, <strong>Next.js</strong>), <strong>PHP</strong> (<strong>Laravel</strong>, <strong>Symfony</strong>) et <strong>DevOps</strong> (<strong>Docker</strong>, <strong>Jenkins</strong>). Architecte de solutions digitales ayant généré <strong>+35% de productivité</strong> et <strong>-40% de coûts opérationnels</strong> pour mes clients.</p>
+            
+            <p>Reconnu pour ma capacité à transformer des défis techniques complexes en opportunités business, je combine vision stratégique et excellence technique pour livrer des produits à forte valeur ajoutée. Prêt à contribuer au développement technologique à l'île Maurice avec créativité et engagement.</p>
+        </div>
+    </div>
+    
+    <!-- Expérience professionnelle -->
+<div class="main-section">
+    <h3>Expériences professionnelles</h3>
+    
+    <div class="experience-item">
+        <div class="job-title">Développeur Fullstack | Next.js & Symfony</div>
+        <div class="company">eTech Consulting pour un client du secteur automobile</div>
+        <div class="date">Janvier 2025 - Présent</div>
+        <ul>
+            <li>Architecture d'une plateforme de réservation avec Next.js et Symfony, <strong>réduisant le temps de chargement de 50%</strong> et augmentant les conversions de 40%</li>
+            <li>Conception d'un dashboard administratif innovant avec analytics en temps réel, permettant une <strong>optimisation des décisions business</strong></li>
+            <li>Implémentation d'une stratégie SEO avancée et d'optimisations UX, <strong>réduisant le taux d'abandon de 30%</strong> et améliorant le ROI marketing</li>
+        </ul>
+    </div>
+    
+    <div class="experience-item">
+        <div class="job-title">Développeur IA & Mentor Technique</div>
+        <div class="company">eTech Consulting pour un cabinet de conseil technologique</div>
+        <div class="date">Novembre 2024 - Janvier 2025</div>
+        <ul>
+            <li>Développement de <strong>solutions IA innovantes</strong> avec React et Symfony 7, générant une valeur ajoutée immédiate pour les clients</li>
+            <li>Mise en place d'une architecture moderne avec <strong>Docker et Mercure</strong> pour des applications temps réel à haute performance</li>
+            <li>Leadership technique d'équipes de développement, <strong>améliorant la qualité du code de 45%</strong> et réduisant les délais de livraison</li>
+        </ul>
+    </div>
+    
+    <div class="experience-item">
+        <div class="job-title">Ingénieur Développeur Confirmé | Web & Data</div>
+        <div class="company">eTech Consulting pour un institut de statistiques</div>
+        <div class="date">Juillet 2023 - Octobre 2024</div>
+        <ul>
+            <li>Conception d'applications de gestion de données complexes avec <strong>Laravel et PostgreSQL</strong>, optimisant les processus métier critiques</li>
+            <li>Implémentation de <strong>pipelines ETL haute performance</strong> traitant plus de 500K enregistrements quotidiens avec 99.9% de fiabilité</li>
+            <li>Développement de solutions de visualisation avancées, <strong>réduisant les coûts opérationnels de 40%</strong> et améliorant la prise de décision</li>
+        </ul>
+    </div>
+    
+    <div class="experience-item">
+        <div class="job-title">Développeur Web Junior</div>
+        <div class="company">eTech Consulting pour une agence de collecte de données</div>
+        <div class="date">Juin 2022 - Juin 2023</div>
+        <ul>
+            <li>Création d'interfaces administratives pour le pilotage de la collecte de données, <strong>optimisant les processus de 35%</strong></li>
+            <li>Implémentation de fonctionnalités interactives avec <strong>AJAX</strong>, améliorant significativement l'expérience utilisateur</li>
+            <li>Application de méthodologies <strong>Agile (Scrum)</strong> et utilisation d'outils de gestion de projet (JIRA), augmentant la productivité de l'équipe</li>
+        </ul>
+    </div>
+    
+    <div class="experience-item">
+        <div class="job-title">Stagiaire en Développement Web</div>
+        <div class="company">eTech Consulting pour un éditeur de logiciels</div>
+        <div class="date">Février 2022 - Mai 2022</div>
+        <ul>
+            <li>Développement d'applications web dynamiques avec <strong>PHP et Laravel 8</strong>, contribuant à des projets en production</li>
+            <li>Mise en place d'environnements de développement avec <strong>Docker</strong> et déploiement d'API REST sécurisées</li>
+            <li>Intégration de JavaScript pour des interfaces utilisateur réactives, suivant les <strong>bonnes pratiques de développement</strong></li>
+        </ul>
+    </div>
+    
+    <div class="experience-item">
+        <div class="job-title">Développeur Java | Mobile Banking</div>
+        <div class="company">SIPEM Banque Madagascar</div>
+        <div class="date">Août 2021 - Décembre 2021</div>
+        <ul>
+            <li>Développement d'applications Android natives (SDK 30) pour le <strong>mobile banking</strong>, améliorant l'accessibilité des services financiers</li>
+            <li>Implémentation de fonctionnalités sécurisées avec <strong>JWT</strong> pour la protection des données sensibles des clients</li>
+            <li>Optimisation des performances et réalisation de tests unitaires avec <strong>JUnit 4</strong> pour garantir la qualité du code</li>
+        </ul>
+    </div>
+</div>
+
+
+
+                
+                <!-- Formation -->
+                <div class="main-section">
+                    <h3>Formations Professionnelles</h3>
+                    
+                    <div class="education-item">
+                        <div class="degree">Master en Ingénierie Informatique | Spécialisation Big Data & Développement</div>
+                        <div class="school">Université Côte d'Azur, Programme MBDS</div>
+                        <div class="date">2021 - 2023</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="degree">Licence en Technologies de l'Information</div>
+                        <div class="school">IT University Madagascar</div>
+                        <div class="date">2018 - 2021</div>
+                    </div>
+                </div>
+                
+                <!-- Réalisations professionnelles -->
+                <div class="main-section">
+                    <h3>Réalisations professionnelles</h3>
+                    <div class="achievement-item">
+                        <span class="achievement-icon"><i class="fas fa-award"></i></span>
+                        <span>Membre du jury prestigieux de la <strong>WebCup Madagascar 2025</strong>, compétition internationale de développement web reconnue dans l'océan Indien
+                        </span>
+                    </div>                    
+                    <div class="achievement-item">
+                        <span class="achievement-icon"><i class="fas fa-microphone"></i></span>
+                        <span>Conférencier invité au Madagascar Web Tech PHPConf 2022</span>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-icon"><i class="fas fa-chart-line"></i></span>
+                        <span>Réduction de 60% du temps de chargement d'une application e-commerce à fort trafic</span>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                        <span>Mise en place d'un programme de mentorat pour développeurs débutants</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
