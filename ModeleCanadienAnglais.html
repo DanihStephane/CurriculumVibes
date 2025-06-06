@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danih Stephane Rakotoarison Harilanto - Full Stack Developer | JavaScript, PHP | International Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #2563eb;
+            --primary-light: #dbeafe;
+            --secondary-color: #1e40af;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --accent: #3b82f6;
+            --success: #10b981;
+            --border-color: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 11pt;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .cv-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background-color: var(--white);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 11in;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 40px;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        .header h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .contact-item i {
+            width: 16px;
+            text-align: center;
+        }
+        
+        /* Main Content */
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Professional Summary */
+        .summary {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        
+        .summary strong {
+            color: var(--primary-color);
+        }
+        
+        /* Core Competencies - Improved Styling */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+        }
+        
+        .skill-category h4 {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-category h4::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: flex-start;
+        }
+        
+        .skill-tag {
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+            font-weight: 500;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        /* Experience */
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .job-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .company-name {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        
+        .achievements {
+            list-style: none;
+        }
+        
+        .achievements li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .achievements li::before {
+            content: '▸';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Education */
+        .education-item {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .education-left {
+            flex: 1;
+        }
+        
+        .degree {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+        
+        .school {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .education-date {
+            color: var(--text-light);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        /* Key Projects */
+        .project-item {
+            background-color: var(--background-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .project-description {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px 0;
+        }
+        
+        .language-name {
+            font-weight: 500;
+        }
+        
+        .language-level {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Achievements */
+        .achievement-list {
+            list-style: none;
+        }
+        
+        .achievement-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .achievement-list li::before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Responsive adjustments for skills */
+        @media (max-width: 1024px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skill-category {
+                padding: 15px;
+            }
+            
+            .skill-tag {
+                font-size: 0.8rem;
+                padding: 4px 10px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                max-width: none;
+            }
+            
+            .section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Danih Stephane Rakotoarison Harilanto</h1>
+            <h2>Full Stack Developer | JavaScript/TypeScript & PHP Specialist</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>danih.rakotoarison@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+261 34 45 671 54</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/danihstephane</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/danihstephane</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Antananarivo, Madagascar | Open to relocation</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Professional Summary -->
+            <div class="section">
+                <h3 class="section-title">Professional Summary</h3>
+                <div class="summary">
+                    <p>Results-driven <strong>Full Stack Developer</strong> with <strong>3+ years of experience</strong> architecting scalable web applications using <strong>JavaScript (React, Next.js)</strong>, <strong>PHP (Laravel, Symfony)</strong>, and <strong>DevOps technologies</strong>. Proven track record of delivering solutions that increased productivity by <strong>35%</strong> and reduced operational costs by <strong>40%</strong>.</p>
+                    
+                    <p>Expertise in transforming complex technical challenges into business opportunities through strategic thinking and technical excellence. Experienced in <strong>international collaboration</strong> and <strong>Agile methodologies</strong>. Seeking opportunities to contribute to innovative technology teams in Canada.</p>
+                </div>
+            </div>
+
+            <!-- Core Competencies -->
+            <div class="section">
+                <h3 class="section-title">Core Competencies</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Frontend Development</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">HTML5/CSS3</span>
+                            <span class="skill-tag">SASS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Backend Development</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">Symfony</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">RESTful APIs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Database Technologies</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Database Design</span>
+                            <span class="skill-tag">Query Optimization</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>DevOps & Cloud</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Development Practices</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">Agile/Scrum</span>
+                            <span class="skill-tag">Test-Driven Development</span>
+                            <span class="skill-tag">Code Review</span>
+                            <span class="skill-tag">Performance Optimization</span>
+                            <span class="skill-tag">Security Best Practices</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Leadership & Soft Skills</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">Team Leadership</span>
+                            <span class="skill-tag">Technical Mentoring</span>
+                            <span class="skill-tag">Cross-cultural Communication</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Project Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Experience -->
+            <div class="section">
+                <h3 class="section-title">Professional Experience</h3>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Full Stack Developer | Next.js & Symfony</div>
+                        <div class="job-date">January 2025 - Present</div>
+                    </div>
+                    <div class="company-name">eTech Consulting - Automotive Sector Client</div>
+                    <ul class="achievements">
+                        <li>Architected a reservation platform using Next.js and Symfony, <strong>reducing page load times by 50%</strong> and increasing conversion rates by 40%</li>
+                        <li>Designed innovative administrative dashboard with real-time analytics, enabling <strong>data-driven business optimization</strong></li>
+                        <li>Implemented advanced SEO strategies and UX optimizations, <strong>reducing bounce rate by 30%</strong> and improving marketing ROI</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">AI Developer & Technical Mentor</div>
+                        <div class="job-date">November 2024 - January 2025</div>
+                    </div>
+                    <div class="company-name">eTech Consulting - Technology Consulting Firm</div>
+                    <ul class="achievements">
+                        <li>Developed <strong>innovative AI solutions</strong> using React and Symfony 7, delivering immediate value to enterprise clients</li>
+                        <li>Established modern architecture with <strong>Docker and Mercure</strong> for high-performance real-time applications</li>
+                        <li>Led technical teams and mentored developers, <strong>improving code quality by 45%</strong> and reducing delivery timelines</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Senior Software Developer | Web & Data</div>
+                        <div class="job-date">July 2023 - October 2024</div>
+                    </div>
+                    <div class="company-name">eTech Consulting - Statistical Institute</div>
+                    <ul class="achievements">
+                        <li>Designed complex data management applications using <strong>Laravel and PostgreSQL</strong>, optimizing critical business processes</li>
+                        <li>Implemented <strong>high-performance ETL pipelines</strong> processing 500K+ daily records with 99.9% reliability</li>
+                        <li>Developed advanced data visualization solutions, <strong>reducing operational costs by 40%</strong> and enhancing decision-making capabilities</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Web Developer</div>
+                        <div class="job-date">June 2022 - June 2023</div>
+                    </div>
+                    <div class="company-name">eTech Consulting - Data Collection Agency</div>
+                    <ul class="achievements">
+                        <li>Created administrative interfaces for data collection management, <strong>optimizing processes by 35%</strong></li>
+                        <li>Implemented interactive features using <strong>AJAX</strong>, significantly enhancing user experience</li>
+                        <li>Applied <strong>Agile (Scrum) methodologies</strong> and project management tools (JIRA), increasing team productivity</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Mobile Developer | Banking Solutions</div>
+                        <div class="job-date">August 2021 - December 2021</div>
+                    </div>
+                    <div class="company-name">SIPEM Bank Madagascar</div>
+                    <ul class="achievements">
+                        <li>Developed native Android applications (SDK 30) for <strong>mobile banking</strong>, improving financial service accessibility</li>
+                        <li>Implemented secure features using <strong>JWT authentication</strong> for sensitive customer data protection</li>
+                        <li>Optimized application performance and conducted unit testing with <strong>JUnit 4</strong> to ensure code quality</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key Projects -->
+            <div class="section">
+                <h3 class="section-title">Key Projects & Achievements</h3>
+                
+                <div class="project-item">
+                    <div class="project-title">Digital Transformation | Textile Industry Leader</div>
+                    <div class="project-description">
+                        Architected omnichannel solution for textile industry leader (20+ retail locations) using React, Capacitor, and Electron. <strong>Key Results:</strong> 78% reduction in logistics delays, $1.2M annual savings, 35% productivity increase, ERP/CRM integration with 99.8% real-time reliability.
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-title">PrefixManager | Innovative AI SaaS Platform</div>
+                    <div class="project-description">
+                        Multi-LLM prompt management platform (OpenAI, Anthropic, Gemini) with advanced analytics. <strong>Business Impact:</strong> 42% user productivity increase, 65% AI API cost reduction, adopted by 4 enterprise divisions. Recognized by COLTIP Canada 2024 for innovation excellence.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <h3 class="section-title">Education</h3>
+                
+                <div class="education-item">
+                    <div class="education-left">
+                        <div class="degree">Master's in Computer Engineering | Big Data & Development Specialization</div>
+                        <div class="school">Université Côte d'Azur, MBDS Program</div>
+                    </div>
+                    <div class="education-date">2021 - 2023</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-left">
+                        <div class="degree">Bachelor's in Information Technology</div>
+                        <div class="school">IT University Madagascar</div>
+                    </div>
+                    <div class="education-date">2018 - 2021</div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="section">
+                <h3 class="section-title">Languages</h3>
+                
+                <div class="language-item">
+                    <span class="language-name">French</span>
+                    <span class="language-level">Native</span>
+                </div>
+                
+                <div class="language-item">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Fluent (Professional)</span>
+                </div>
+                
+                <div class="language-item">
+                    <span class="language-name">German</span>
+                    <span class="language-level">Intermediate</span>
+                </div>
+            </div>
+
+            <!-- Professional Achievements -->
+            <div class="section">
+                <h3 class="section-title">Professional Recognition</h3>
+                <ul class="achievement-list">
+                    <li><strong>Jury Member</strong> - WebCup Madagascar 2025, prestigious international web development competition in the Indian Ocean region</li>
+                    <li><strong>Guest Speaker</strong> - Madagascar Web Tech PHPConf 2022</li>
+                    <li><strong>Performance Optimization</strong> - Achieved 60% load time reduction for high-traffic e-commerce application</li>
+                    <li><strong>Mentorship Program</strong> - Established and led developer mentorship initiative for junior developers</li>
+                    <li><strong>Technical Innovation</strong> - Developed reusable React component library, accelerating development across 5+ enterprise projects by 30%</li>
+                </ul>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="section">
+                <h3 class="section-title">Additional Information</h3>
+                <div class="summary">
+                    <p><strong>Work Authorization:</strong> Open to work visa sponsorship and relocation to Canada</p>
+                    <p><strong>Availability:</strong> Immediately available for new opportunities</p>
+                    <p><strong>Professional Interests:</strong> Artificial Intelligence, Cloud Architecture, DevOps, Technology Leadership</p>
+                    <p><strong>Community Involvement:</strong> Local tech meetup organizer, open-source contributor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
